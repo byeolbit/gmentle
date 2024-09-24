@@ -2,10 +2,12 @@
   "name": "daily-word",
   "version": "1.0.0",
   "description": "Daily Korean Word",
-  "main": "index.js",
+  "main": "api/index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "vercel dev"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+  }
 }
