@@ -16,6 +16,29 @@ module.exports = (req, res) => {
   const currentDate = getCurrentKSTDate();
   const selectedWord = selectWordForDate(currentDate);
   
-  res.setHeader('Content-Type', 'text/plain; charset=utf-8');
-  res.status(200).send(selectedWord);
-};
+  const htmlResponse = `
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오늘의 단어</title>
+    <style>
+        .word {
+            position: absolute;
+            left: -9999px;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="word">${selectedWord}</div>
+</body>
+</html>
+  `;
+
+  res.setHeader('Content-Type', 'text/html; charset=utf-8');
+  res.status(200).send(htmlResponse);
+}
