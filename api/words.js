@@ -24,17 +24,14 @@ module.exports = (req, res) => {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>오늘의 단어</title>
     <style>
-        .word {
-            position: absolute;
-            left: -9999px;
-            width: 1px;
-            height: 1px;
-            overflow: hidden;
+        body {
+            background: black;
+            color: bloack;
         }
     </style>
 </head>
 <body>
-    <div class="word">${selectedWord}</div>
+    ${selectedWord}
 </body>
 </html>
   `;
